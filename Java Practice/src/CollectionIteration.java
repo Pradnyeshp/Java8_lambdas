@@ -19,6 +19,12 @@ public class CollectionIteration {
 
         people.forEach(p->System.out.println(p.getFname()));
 
+        long count = people.stream().filter(person -> person.getFname().startsWith("j")).count();
+
+        System.out.println(count);
+
+        System.out.println("Stream and filter results : ");
+        people.parallelStream().filter(person -> person.getLname().contains("i")).forEach(System.out::println);
 
     }
 
